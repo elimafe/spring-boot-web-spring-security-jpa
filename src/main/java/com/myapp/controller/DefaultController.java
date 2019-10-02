@@ -35,7 +35,16 @@ public class DefaultController {
     public String login() {
         return "/login";
     }
+    
+    @GetMapping("/loginAdm")
+    public String loginAdm() {
+    	return "loginAdm";
+    }
 
+    @GetMapping("/CadastroLogin")
+    public String CadastroLogin() {
+    	return "CadastroLogin";
+    } 
     @GetMapping("/403")
     public String error403() {
         return "/error/403";

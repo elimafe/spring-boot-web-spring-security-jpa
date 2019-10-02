@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<title>Cadastro de Login Administrativo</title>
+
+<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+
+
+
+
+<style>
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@media ( min-width : 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+</style>
+<!-- Custom styles for this template -->
+<link href="/bootstrap/main.css" rel="stylesheet" />
+</head>
+<body>
+	<form class="form-signin">
+
+		<div class="form-group">
+			<label for="exampleInputEmail1">Nome</label>
+			 <input 
+			   type="text"
+				class="form-control" id="exampleInputNome"
+				aria-describedby="emailHelp" placeholder="Entre com seu nome" />
+		</div>
+		<div class="form-group">
+			<label for="exampleInputEmail1">E-mail</label> 
+			<input type="email"
+				class="form-control" id="exampleInputEmail1"
+				aria-describedby="emailHelp" placeholder="Entre com seu e-mail" />
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">Senha</label> 
+			<input
+				type="password" class="form-control" id="exampleInputPassword1"
+				placeholder="Senha" />
+		</div>
+		<div class="form-group form-check">
+			<input type="checkbox" class="form-check-input" id="exampleCheck1"/>
+			<label class="form-check-label" for="exampleCheck1">Adminstrador</label>
+		
+		
+			<input type="checkbox" class="form-check-input" id="exampleCheck1"/>
+			<label class="form-check-label" for="exampleCheck1">Usuário</label>
+		</div>
+		<button type="submit" class="btn btn-primary">Cadastrar</button>
+	</form>
+</body>
+</html>
