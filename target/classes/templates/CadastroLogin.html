@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html
+     xmlns="http://www.w3.org/1999/xhtml"
+	 xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 <title>Cadastro de Login Administrativo</title>
 
-<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css" />
 
 
 
@@ -23,35 +23,35 @@
 	user-select: none;
 }
 
-@media ( min-width : 768px) {
+@media ( min-width : 400px) {
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
 	}
 }
 </style>
 <!-- Custom styles for this template -->
-<link href="/bootstrap/main.css" rel="stylesheet" />
+ <link href="bootstrap/main.css" rel="stylesheet"/>
 </head>
 <body>
-	<form class="form-signin">
 
-		<div class="form-group">
-			<label for="exampleInputEmail1">Nome</label>
+ <form class="form-signin" action="#" th:action="@{/CadastroLogin}" method="post" th:object="${personForm}">
+		<div>
+			<label for="exampleInputNome">Nome</label>
 			 <input 
 			   type="text"
-				class="form-control" id="exampleInputNome"
+				class="form-control" id="exampleInputNome" name="nome"
 				aria-describedby="emailHelp" placeholder="Entre com seu nome" />
 		</div>
-		<div class="form-group">
+		<div>
 			<label for="exampleInputEmail1">E-mail</label> 
 			<input type="email"
-				class="form-control" id="exampleInputEmail1"
+				class="form-control" id="exampleInputEmail1" name="email"
 				aria-describedby="emailHelp" placeholder="Entre com seu e-mail" />
 		</div>
-		<div class="form-group">
+		<div>
 			<label for="exampleInputPassword1">Senha</label> 
 			<input
-				type="password" class="form-control" id="exampleInputPassword1"
+				type="password" class="form-control" id="exampleInputPassword1" name="senha"
 				placeholder="Senha" />
 		</div>
 		<div class="form-group form-check">
@@ -59,10 +59,23 @@
 			<label class="form-check-label" for="exampleCheck1">Adminstrador</label>
 		
 		
-			<input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-			<label class="form-check-label" for="exampleCheck1">Usuário</label>
+			<input type="checkbox" class="form-check-input" id="exampleCheck2"/>
+			<label class="form-check-label" for="exampleCheck2">Usuário</label>
 		</div>
-		<button type="submit" class="btn btn-primary">Cadastrar</button>
+		<div class="row">
+			<div class="col-md-12">
+				<select class="mdb-select colorful-select dropdown-primary md-form" multiple="multiple">
+                         <option value="" disabled="disabled"> Perfis </option>
+                         <option th:each="list : ${listaEnum}"
+                            th:value="${list.id}"
+                            th:utext="${list.email}"/>
+                  </select>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-lg btn-primary btn-block">Cadastrar</button>
 	</form>
+	<script type="text/javascript" src="/bootstrap/js/jquery-2.1.4.min.js"/>
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"/>
+	
 </body>
 </html>

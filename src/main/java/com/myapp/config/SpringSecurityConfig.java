@@ -79,5 +79,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         .passwordEncoder(new BCryptPasswordEncoder());
          */
     }
+    
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/bootstrap/**", "/css/**", "/js/**", "/css/**", "/webjars/**", "/images/**");
+}
     	
 }
